@@ -60,7 +60,7 @@ public class ChangePw_servlet extends HttpServlet {
 		
 		String update=String.format("UPDATE student SET pw='%s' WHERE id='%s'",req.getChangeItem(), req.getStudent_id());
 		try {
-			JDBCUtils.query(update);
+			JDBCUtils.update(update);
 			res.setResponse(0, "更新成功", req.getChangeItem());
 		}catch(SQLException e) {
 			res.setResponse(2, "数据库更新错误", null);

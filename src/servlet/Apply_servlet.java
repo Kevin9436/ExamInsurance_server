@@ -104,6 +104,7 @@ public class Apply_servlet extends HttpServlet {
 					try {
 						JDBCUtils.update(updateOrder);
 						JDBCUtils.update(updateAccount);
+						res.setResponse(0, "申诉成功", applyres);
 					}catch(SQLException e) {
 						res.setResponse(10, "数据库更新错误", null);
 			            e.printStackTrace();
