@@ -20,7 +20,7 @@ import utils.JDBCUtils;
 /**
  * Servlet implementation class ChangePw_servlet
  */
-@WebServlet("/student/changePassword")
+@WebServlet("/user/changePassword")
 public class ChangePw_servlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -58,7 +58,11 @@ public class ChangePw_servlet extends HttpServlet {
 		ChangeInfoReq req=gson.fromJson(reqJson, ChangeInfoReq.class);
 		BasicResponse<String> res=new BasicResponse<String>();
 		
-		String update=String.format("UPDATE student SET pw='%s' WHERE id='%s'",req.getChangeItem(), req.getStudent_id());
+		String update;
+		if(req.getIdentity()==1)
+			update=String.format("UPDATE student SET pw='%s' WHERE id='%s'",req.getChangeItem(), req.getId());
+		else
+			update=String.format("UPDATE teacher SET pw='%s' WHERE id='%s'", req.getChangeItem(),req.getId());
 		try {
 			JDBCUtils.update(update);
 			res.setResponse(0, "更新成功", req.getChangeItem());

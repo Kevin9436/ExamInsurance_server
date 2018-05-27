@@ -23,14 +23,14 @@ import utils.JDBCUtils;
 /**
  * Servlet implementation class Login_servlet
  */
-@WebServlet("/student/login")
-public class Login_servlet extends HttpServlet {
+@WebServlet("/user/student/login")
+public class StudentLogin_servlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public Login_servlet() {
+    public StudentLogin_servlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -44,7 +44,7 @@ public class Login_servlet extends HttpServlet {
 	    
 		String id=request.getParameter("id");
 		String pw=request.getParameter("pw");
-		System.out.println("login request:"+id+" "+pw);
+		System.out.println("student login request:"+id+" "+pw);
 		String login = String.format("SELECT * FROM student WHERE id='%s'", id);
 		BasicResponse<Student> res=new BasicResponse<Student>();
 		try {

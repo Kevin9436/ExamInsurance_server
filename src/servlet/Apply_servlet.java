@@ -22,7 +22,7 @@ import utils.JDBCUtils;
 /**
  * Servlet implementation class Apply_servlet
  */
-@WebServlet("/student/apply")
+@WebServlet("/user/student/apply")
 public class Apply_servlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        

@@ -22,14 +22,14 @@ import utils.JDBCUtils;
 /**
  * Servlet implementation class Register_servlet
  */
-@WebServlet("/student/register")
-public class Register_servlet extends HttpServlet {
+@WebServlet("/user/student/register")
+public class StudentRegister_servlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public Register_servlet() {
+    public StudentRegister_servlet() {
         super();
         // TODO Auto-generated constructor stub
     }
