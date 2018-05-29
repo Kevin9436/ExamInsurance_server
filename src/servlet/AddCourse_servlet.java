@@ -63,10 +63,13 @@ public class AddCourse_servlet extends HttpServlet {
 		
 		BasicResponse<Teaching> res=new BasicResponse<Teaching>();
 		String check=String.format("SELECT * FROM course WHERE id='%s' AND status=0", req.getCourse_id());
+		String newTeach=String.format("INSERT INTO teaching(teacher_id,course_id,course_title,status) VALUES ('%s','%s','%s',0)",
+				req.getTeacher_id(),req.getCourse_id(),req.getCourse_title());
 		try {
 			ResultSet result=JDBCUtils.query(check);
 			if(result.next()) {
 				//课程已经在数据库中存在，只给老师添加课程即可
+				JDBCUtils.update(newTeach);
 				Teaching course=new Teaching();
 				course.setCourse_id(result.getString("id"));
 				course.setCourse_title(result.getString("title"));
@@ -111,6 +114,7 @@ public class AddCourse_servlet extends HttpServlet {
 						req.getCourse_id(),req.getCourse_title(),upper,lower);
 				try {
 					JDBCUtils.update(newCourse);
+					JDBCUtils.update(newTeach);
 					Teaching teach=new Teaching();
 					teach.setCourse_id(req.getCourse_id());
 					teach.setCourse_title(req.getCourse_title());
