@@ -8,7 +8,7 @@ import java.sql.Statement;
 
 public class JDBCUtils {
     private static final String DBDRIVER = "com.mysql.cj.jdbc.Driver";// 驱动类类名
-    private static final String DBNAME = "examinsurance_db";// 数据库名
+    private static final String DBNAME = "examinsurance_db_test";// 数据库名
     private static final String DBCONFIG = "?useSSL=false&useUnicode=true&characterEncoding=UTF-8&serverTimezone=GMT";//配置数据库连接
     private static final String DBURL = "jdbc:mysql://localhost:3306/" + DBNAME+DBCONFIG;// 连接URL
     private static final String DBUSER = "root";// 数据库用户名
