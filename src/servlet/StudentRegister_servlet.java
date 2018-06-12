@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -16,6 +17,7 @@ import com.google.gson.Gson;
 
 import bean.BasicResponse;
 import bean.RegisterReq;
+import model.Order;
 import model.Student;
 import utils.JDBCUtils;
 
@@ -31,7 +33,6 @@ public class StudentRegister_servlet extends HttpServlet {
      */
     public StudentRegister_servlet() {
         super();
-        // TODO Auto-generated constructor stub
     }
 
 	/**
@@ -66,7 +67,7 @@ public class StudentRegister_servlet extends HttpServlet {
             if (result.next()) {
             	res.setResponse(1, "id已存在",null);
             } else {
-            	String create = String.format("INSERT INTO student(id,pw,username,phone,account) VALUES('%s','%s','%s','%s',0)",
+            	String create = String.format("INSERT INTO student(id,pw,username,phone,account) VALUES('%s','%s','%s','%s',5)",
             			req.getId(),req.getPw(),req.getUsername(),req.getPhone());
             	try {
             		JDBCUtils.update(create);
@@ -75,8 +76,8 @@ public class StudentRegister_servlet extends HttpServlet {
             		student.setPw(req.getPw());
             		student.setUsername(req.getUsername());
             		student.setPhone(req.getPhone());
-            		student.setAccount(0);
-            		student.setHistory(null);
+            		student.setAccount(5);
+            		student.setHistory(new ArrayList<Order>());
             		res.setResponse(0, "注册成功", student);
             	}catch(SQLException e) {
             		res.setResponse(3,"数据插入错误",null);
