@@ -77,7 +77,7 @@ public class Apply_servlet extends HttpServlet {
 					if(orderResult.getInt("type")==0) {
 						//高分奖励检查
 						if(score>=orderResult.getInt("threshold")) {
-							applyres.setReward(5);
+							applyres.setReward(10);
 						}
 						else {
 							applyres.setReward(0);
@@ -86,7 +86,7 @@ public class Apply_servlet extends HttpServlet {
 					else {
 						//低分赔偿检查
 						if(score<=orderResult.getInt("threshold")) {
-							applyres.setReward(3);
+							applyres.setReward(20);
 						}
 						else {
 							applyres.setReward(0);
