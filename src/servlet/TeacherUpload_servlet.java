@@ -100,9 +100,9 @@ public class TeacherUpload_servlet extends HttpServlet {
             e.printStackTrace();
             
         }
-		
+		System.out.println(res);
 		response.setContentType("text/html;charset=utf-8");
-		PrintWriter writer = response.getWriter();  
+		PrintWriter writer = response.getWriter();
         writer.write(new Gson().toJson(res, BasicResponse.class));  
         writer.flush(); 
 	}
