@@ -45,6 +45,7 @@ public class CourseList_servlet extends HttpServlet {
 	    List<Course> courseList=new ArrayList<Course>();
 	    try {
 	    	ResultSet result = JDBCUtils.query(getcourse);
+	    	//将数据库查询结果逐条存入Course数组
 	    	while(result.next()) {
 	    		Course course=new Course();
 	    		course.setId(result.getString("id"));

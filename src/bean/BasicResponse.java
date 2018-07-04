@@ -1,3 +1,6 @@
+/*
+ * 对所有响应进行封装，添加错误信息
+ */
 package bean;
 
 public class BasicResponse<T> {

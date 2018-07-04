@@ -47,6 +47,7 @@ public class TeacherUpload_servlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		//传输文件这里有一些问题，客户端应该没有调通，服务器这边的问题不知道有没有，下面的代码仅是解析文件和教师ID和课程ID，数据库处理没写
 		System.out.println("get post request");
 		String savePath = this.getServletContext().getRealPath("/WEB-INF/upload");
 		File file = new File(savePath);

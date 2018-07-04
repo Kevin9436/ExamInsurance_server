@@ -60,6 +60,7 @@ public class TeacherLogin_servlet extends HttpServlet {
 					String getCourse=String.format("SELECT * FROM teaching WHERE teacher_id='%s'", id);
 					ResultSet courseset = JDBCUtils.query(getCourse);
 					List<Teaching> teach = new ArrayList<Teaching>();
+					//获取教授课程信息
 					while(courseset.next()) {
 						Teaching course = new Teaching();
 						course.setCourse_id(courseset.getString("course_id"));

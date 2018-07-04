@@ -1,3 +1,6 @@
+/*
+ * ½ÌÊÚ¿Î³ÌÀà
+ */
 package model;
 
 public class Teaching {

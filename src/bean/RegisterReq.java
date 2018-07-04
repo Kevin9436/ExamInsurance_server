@@ -1,3 +1,6 @@
+/*
+ * 对客户端用户注册请求的封装
+ */
 package bean;
 
 public class RegisterReq {

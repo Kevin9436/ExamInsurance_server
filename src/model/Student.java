@@ -1,3 +1,6 @@
+/*
+ * Ñ§ÉúÀà
+ */
 package model;
 
 import java.util.List;

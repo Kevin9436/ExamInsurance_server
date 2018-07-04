@@ -1,3 +1,6 @@
+/*
+ * ¿Î³ÌÀà
+ */
 package model;
 
 public class Course {

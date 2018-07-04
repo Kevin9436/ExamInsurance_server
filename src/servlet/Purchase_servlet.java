@@ -65,6 +65,7 @@ public class Purchase_servlet extends HttpServlet {
 			String getStudent=String.format("SELECT * FROM student WHERE id='%s'", req.getStudentId());
 			ResultSet result=JDBCUtils.query(getStudent);
 			if(result.next()) {
+				//这里默认购买单价为1
 				if(result.getInt("account")<1) {
 					res.setResponse(6, "余额不足",null);
 				}

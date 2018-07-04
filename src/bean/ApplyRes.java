@@ -1,3 +1,6 @@
+/*
+ * 对客户端学生申诉响应的封装
+ */
 package bean;
 
 public class ApplyRes {

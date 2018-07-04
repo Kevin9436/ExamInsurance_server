@@ -1,3 +1,6 @@
+/*
+ * 数据库连接工具类
+ */
 package utils;
 
 import java.sql.Connection;

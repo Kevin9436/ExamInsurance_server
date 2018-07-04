@@ -1,3 +1,6 @@
+/*
+ * 对客户端教师上传请求的封装
+ */
 package bean;
 
 public class UploadReq {

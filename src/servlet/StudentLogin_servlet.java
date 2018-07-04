@@ -61,6 +61,7 @@ public class StudentLogin_servlet extends HttpServlet {
 					String getorder=String.format("SELECT * FROM `order` WHERE student_id='%s'", id);
 					ResultSet orderset = JDBCUtils.query(getorder);
 					List<Order> history = new ArrayList<Order>();
+					//获取学生订单记录
 					while(orderset.next()) {
 						Order order=new Order();
 						order.setId(orderset.getString("course_id"));

@@ -1,3 +1,6 @@
+/*
+ * 对客户端用户更改个人信息请求的封装
+ */
 package bean;
 
 public class ChangeInfoReq {

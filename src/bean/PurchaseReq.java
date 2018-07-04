@@ -1,3 +1,6 @@
+/*
+ * 对客户端学生购买保险请求的封装
+ */
 package bean;
 
 import model.Order;

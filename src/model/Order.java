@@ -1,3 +1,6 @@
+/*
+ * 学生保险订单类
+ */
 package model;
 
 public class Order {
